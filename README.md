@@ -17,47 +17,34 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 
 ### How to Run
 
-**Train**. For example, train a MLP + 3D ResNet model trained with cross-entropy loss
+**Train on dataset 1**. For example, train a MLP + 3D ResNet model trained with cross-entropy loss
 
 ```Shell
-python Gen_Adv.py \
- --loss_type=soft \
- --name=resnet_50 \
- --save_img \
- --save_fea
+python train_on_dataset1.py
 ```
 It will save the adversarial images and features.
 
-**Test**.
+**Test on dataset 2/3 directly**.
 
 ```Shell
-python evaluate_adv.py \
- --loss_type=soft \
- --name=resnet_50
+python test_on_dataset2/3_baseline.py
 ```
 Shell in one trial. We support three attacking methods, including FGSM, I-FGSM and MI-FGSM.
 
 ```bash
 sh adv.sh
 ```
-### Visualizations
 
-#### Visualizations of Adversarial Examples
+**Domain adaptation on dataset 3**.
 
-<p align="left"><img src="Images/1.png" width="176"> <img src="Images/2.png" width="176"> <img src="Images/3.png" width="176"> <img src="Images/4.png" width="176"></p>
+```Shell
+python DA_on_dataset3.py
+```
+Shell in one trial. We support three attacking methods, including FGSM, I-FGSM and MI-FGSM.
 
-#### Visualizations of Ranking List
-<p align="left">
-<img src="Images/untarget_illustration-crop-1.png" alt="Non-targeted Attack" width="720px">
-</p>
-
-The ranking list of non-targeted attack.
-
-<p align="left">
-<img src="Images/target_illustration_cropped-1.png" alt="Targeted Attack" width="720px">
-</p>
-
-The ranking list of targeted attack.
+```bash
+sh adv.sh
+```
 
 ### Citation and Contact
 
@@ -70,7 +57,7 @@ If you find the code useful, please cite the following paper
       year={2020}
     }
 
-If you encounter any problems or have any inquiries, please contact songbai.site@gmail.com or songbai@robots.ox.ac.uk
+If you encounter any problems or have any inquiries, please contact cfang.meta@gmail.com.
 
 
 
