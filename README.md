@@ -5,9 +5,11 @@ By [Cong Fang], [Song Bai].
 This repository contains the code of the paper [Predicting COVID-19 malignant progression with AI techniques](https://arxiv.org/abs/xxxx.xxxxx). It develops an early-warning system with deep learning techniques to predict COVID-19 malignant progression. Our method leverages clinical data and CT scans of outpatients and achieves an AUC of 0.920 in the single-center study and an average AUC of 0.874 in the multicenter study.
 
 ### Prerequisites
-* Pytorch 1.4.0
-* Numpy
-* Python 3.7
+* python 3.7
+* pytorch 1.4.0
+* numpy
+* imageio
+* tqdm
 
 ### How to Run
 
