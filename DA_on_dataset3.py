@@ -146,15 +146,15 @@ def test(model, train_class0_dataloader, train_class1_dataloader, test_dataloade
             if not os.path.exists(root):
                 os.mkdir(root)
                 
-            torch.save(best_model_state_dict, '%s/acc%.3f_sen%.3f_@epoch%d.pth' % \
+            torch.save(best_model_state_dict, '%s/acc%.3f_sen%.3f@epoch%d.pth' % \
                 (root, best_acc,best_sen,epoch+1))
             
             # save config
             with open('checkpoints/%s/config.pickle' % check_dir, 'wb') as fp:
                 pickle.dump(config, fp)
 
-            saved_val = register(dump_file='./spss/metric_learning_res_on_dataset3/acc%.3f-sen%.3f_%s@epoch%d.pickle' % \
-                (best_acc, best_sen, config.encoder_3d, epoch+1))
+            saved_val = register(dump_file='./spss/metric_learning_res_on_dataset3/acc%.3f-sen%.3f@epoch%d.pickle' % \
+                (best_acc, best_sen, epoch+1))
 
             saved_val.regis(ret_dict)
             saved_val.dump()

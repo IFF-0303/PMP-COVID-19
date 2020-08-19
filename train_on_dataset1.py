@@ -91,9 +91,8 @@ def val(model, val_data, config, epoch, best_acc, best_sen, best_val_epoch, best
             if not os.path.exists(root):
                 os.mkdir(root)
                 
-            torch.save(best_model_state_dict, '%s/acc%.3f-sen%.3f_focal_alpha%s_focal_gamma%s-bs%d-sdata_pool_%s-ddata_pool_%s-UDA-%s_CT_mask-%s-%s_normalize-%s.pth' % \
-                (root, best_acc,best_sen,config.focal_alpha,config.focal_gamma,config.batch_size,config.sdata_pool, \
-                    config.ddata_pool,config.UDA,config.CT_mask,config.CT_mask_type,config.normalize))
+            torch.save(best_model_state_dict, '%s/acc%.3f-sen%.3f@epoch%d.pth' % \
+                (root, best_acc,best_sen,best_val_epoch+1))
             
             # save config
             with open('checkpoints/%s/config.pickle' % check_dir, 'wb') as fp:
@@ -142,7 +141,7 @@ def train(model, train_data, val_data, config, num_fold):
         best_model_state_dict, best_acc, best_sen, best_val_epoch, ret_dict = val(model, val_dataloader, config, epoch, best_acc, best_sen, best_val_epoch, best_model_state_dict, ret_dict, 'val', num_fold)
         print('Accuracy %.3f sensitivity %.3f @ epoch %d' % (best_acc,best_sen,best_val_epoch+1))
         scheduler_StepLR.step()
-        print('current lr: ', optimizer.param_groups[0]['lr'])
+        print('Current lr: ', optimizer.param_groups[0]['lr'])
 
     return model, ret_dict
 
