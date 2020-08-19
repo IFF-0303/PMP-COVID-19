@@ -7,9 +7,13 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 ### Prerequisites
 * python 3.7
 * pytorch 1.4.0
-* numpy
+* numpy 
+* torchnet
 * imageio
 * tqdm
+* scikit-learn
+* easydict
+* pydicom
 
 ### How to Run
 
