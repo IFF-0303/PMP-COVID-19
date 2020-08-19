@@ -31,20 +31,12 @@ python test_on_dataset2/3_baseline.py
 ```
 Shell in one trial. We support three attacking methods, including FGSM, I-FGSM and MI-FGSM.
 
-```bash
-sh adv.sh
-```
-
 **Domain adaptation on dataset 3**.
 
 ```Shell
 python DA_on_dataset3.py
 ```
 Shell in one trial. We support three attacking methods, including FGSM, I-FGSM and MI-FGSM.
-
-```bash
-sh adv.sh
-```
 
 ### Citation and Contact
 
