@@ -18,24 +18,24 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 ### How to Run
 
 **Preparation**.
-1. Download datasets
+  1. Download datasets
 
-  **Google Driver:** https://drive.google.com/    
-  **Baiduyunpan:** https://pan.baidu.com    
-  **Password:** 11ee
+     **Google Driver:** https://drive.google.com/    
+     **Baiduyunpan:** https://pan.baidu.com    
+     **Password:** 11ee
   
-2. Modify the dataset path:
+  2. Modify the dataset path:
 
 ```Shell
 config.data_root='/home/xxxx/works/COVID-19/PMP/data/
 ```
-3. Modify the pre-trained model path:
+  3. Modify the pre-trained model path:
 
 ```Shell
 config.pretrained_model_path=/home/xxxx/works/COVID-19/PMP/pretrained_model_dataset1/
 ```
 
-4. Cpoy datasets to your dataset path.
+  4. Cpoy datasets to your dataset path.
 
 **Training**. For example, train our model on dataset 1
 
