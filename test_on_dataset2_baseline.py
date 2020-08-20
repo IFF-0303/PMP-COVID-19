@@ -103,7 +103,7 @@ def test(model, test_dataloader, config, model_num):
         config.test_scores = test_scores
         config.test_labels = test_labels
 
-        with open('checkpoints/%s/test_data2_fold%d_res.pickle' % ('test_res_on_dataset2_'+check_dir, model_num), 'wb') as fp:
+        with open('res/%s/test_data2_fold%d_res.pickle' % ('test_res_on_dataset2_'+check_dir, model_num), 'wb') as fp:
             pickle.dump(config, fp)
 
 if __name__ == "__main__":
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     config.data_root = '/home/cfang/works/COVID-19/PMP/data/'
 
     check_dir = time.strftime('%Y-%m-%d %H:%M:%S')
-    os.mkdir(os.path.join('checkpoints', 'test_res_on_dataset2_'+check_dir))
+    os.mkdir(os.path.join('res', 'test_res_on_dataset2_'+check_dir))
     
     # load clinical data
     config.data = config.data_root + 'data2'

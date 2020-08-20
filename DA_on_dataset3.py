@@ -107,9 +107,8 @@ def test(model, train_class0_dataloader, train_class1_dataloader, test_dataloade
         compute_class_score.train()
 
         print('Epoch ', epoch+1)
-        print('Test tau: ',test_tau)
         cm_all = np.array(comatrix_list).sum(axis=0)
-        print('Test confusion matrix on %s by domain adaptation' % (data_name))
+        print('Test confusion matrix on %s: ' % (data_name))
         print(cm_all)
 
         acc_epoch = (float(cm_all[0, 0])+float(cm_all[1, 1]))/cm_all.sum()
@@ -153,7 +152,7 @@ def test(model, train_class0_dataloader, train_class1_dataloader, test_dataloade
             with open('checkpoints/%s/config.pickle' % check_dir, 'wb') as fp:
                 pickle.dump(config, fp)
 
-            saved_val = register(dump_file='./spss/metric_learning_res_on_dataset3/acc%.3f-sen%.3f@epoch%d.pickle' % \
+            saved_val = register(dump_file='./res/'+check_dir+'/acc%.3f-sen%.3f@epoch%d.pickle' % \
                 (best_acc, best_sen, epoch+1))
 
             saved_val.regis(ret_dict)
@@ -215,13 +214,11 @@ def train(model, train_data_class0, train_data_class1, test_data, config, num_fo
             metric_loss = cos_criterion(class_avg_vectors[0].unsqueeze(0),class_avg_vectors[1].unsqueeze(0),y.unsqueeze(0))
             class_loss = BCE_criterion(query_class_score[:,1], query_class.float())
             loss = class_loss + config.cos_loss_gamma * metric_loss
-            print('Class loss: %.3f metric loss: %.3f' % (class_loss, metric_loss))
             loss.backward()
             optimizer.step()
 
         best_model_state_dict, best_acc, best_sen, best_val_epoch, ret_dict = test(model, train_class0_dataloader, train_class1_dataloader, test_dataloader, config, epoch, best_acc, best_sen, best_val_epoch, best_model_state_dict, ret_dict, num_fold)
         print('Accuracy %.3f sensitivity %.3f @ epoch %d' % (best_acc,best_sen,best_val_epoch+1))
-        print('Current lr:', optimizer.param_groups[0]['lr'])
 
 if __name__ == "__main__":
     remove_items = ['医务人员接触感染', '心梗', '脑梗', '心脑血管病',
@@ -259,8 +256,9 @@ if __name__ == "__main__":
     for test_data_flag in range(1): # training on dataset3
         for finetune_repeat in range(config.finetune_repeat):
             check_dir = time.strftime('%Y-%m-%d %H:%M:%S')
-            check_dir = 'DA_data3'+'_'+check_dir+'_repeat_'+str(finetune_repeat)+'_few_shot_'+str(config.few_shot_num)
+            check_dir = 'DA_on_data3'+'_'+check_dir+'_repeat_'+str(finetune_repeat)+'_few_shot_'+str(config.few_shot_num)
             os.mkdir(os.path.join('checkpoints', check_dir))
+            os.mkdir(os.path.join('res', check_dir))
 
             # get training and test data index
             if test_data_flag==0:

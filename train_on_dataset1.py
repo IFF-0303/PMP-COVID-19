@@ -87,7 +87,7 @@ def val(model, val_data, config, epoch, best_acc, best_sen, best_val_epoch, best
             ret_dict['labels'] = labels.cpu().numpy()
             
             # save model
-            root = './checkpoints/%s/%d' % (check_dir, num_fold)
+            root = './checkpoints/%s/fold%d' % (check_dir, num_fold)
             if not os.path.exists(root):
                 os.mkdir(root)
                 
@@ -98,7 +98,11 @@ def val(model, val_data, config, epoch, best_acc, best_sen, best_val_epoch, best
             with open('checkpoints/%s/config.pickle' % check_dir, 'wb') as fp:
                 pickle.dump(config, fp)
 
-            saved_val = register(dump_file='./spss/val_dataset1_acc%.3f-sen%.3f.pickle' % (best_acc, best_sen))
+            # save result
+            res_path = './res/%s/fold%d' % (check_dir, num_fold)
+            if not os.path.exists(res_path):
+                os.mkdir(res_path) 
+            saved_val = register(dump_file='./res/%s/fold%d/val_dataset1_acc%.3f-sen%.3f.pickle' % (check_dir, num_fold, best_acc, best_sen))
             saved_val.regis(ret_dict)
             saved_val.dump()
 
@@ -146,7 +150,7 @@ def train(model, train_data, val_data, config, num_fold):
     return model, ret_dict
 
 if __name__ == "__main__":
-    seed_torch(seed=8888)
+    seed_torch(seed=6666)
     remove_items = ['医务人员接触感染', '心梗', '脑梗', '心脑血管病',
     '慢性消化系统疾病','外周血管病', '慢性呼吸道疾病', 
     '自身免疫或结缔组织病', '服用糖皮质激素强的松15mgd×30天以上', 
@@ -219,7 +223,9 @@ if __name__ == "__main__":
     config.n_classes = 2
 
     check_dir = time.strftime('%Y-%m-%d %H:%M:%S')
+    check_dir = 'Train_on_data1'+'_'+check_dir
     os.mkdir(os.path.join('checkpoints', check_dir))
+    os.mkdir(os.path.join('res', check_dir))
     
     # loading raw clinical data
     config.data = config.data_root + 'data1'
