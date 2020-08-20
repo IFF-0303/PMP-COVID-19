@@ -17,25 +17,33 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 
 ### How to Run
 
+**Preparation**.
+1. Download datasets
+  **Google Driver:** https://drive.google.com/
+  **Baiduyunpan:** https://pan.baidu.com
+  **Password:** 11ee
+2. Modify the dataset path: ```config.data_root='/home/xxxx/works/COVID-19/PMP/data/```, 
+and the pre-trained model path: ```config.pretrained_model_path=/home/xxxx/works/COVID-19/PMP/pretrained_model_dataset1/```
+
 **Training**. For example, train our model on dataset 1
 
 ```Shell
 python train_on_dataset1.py
 ```
-It will save the models in ./checkpionts/ and results in ./res/
+It will save the models in ```./checkpionts/``` and results in ```./res/```.
 
-**Testing**. For example, directly evaluate the model trained from dataset1 on dataset 2
+**Testing**. For example, directly evaluate the model trained from dataset1 on dataset 2.
 
 ```Shell
 python test_on_dataset2_baseline.py
 ```
-It will save the results in ./res/
+It will save the results in ```./res/```.
 
-**Domain adaptation**. For example, adapt the pre-trained model from dataset 1 on dataset 3 by a metric-learning method
+**Domain adaptation**. For example, adapt the pre-trained model from dataset 1 on dataset 3 by a metric-learning method.
 
 ```Shell
 python DA_on_dataset3.py
 ```
-It will save the models in ./checkpionts/ and results in ./res/
+It will save the models in ```./checkpionts/``` and results in ```./res/```.
 
 If you encounter any problems or have any inquiries, please contact cfang.meta@gmail.com.
