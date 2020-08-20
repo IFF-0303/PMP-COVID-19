@@ -25,8 +25,10 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
   **Password:** 11ee
   
 2. Modify the dataset path:
-```config.data_root='/home/xxxx/works/COVID-19/PMP/data/```, 
+
+```config.data_root='/home/xxxx/works/COVID-19/PMP/data/```
 and the pre-trained model path:
+
 ```config.pretrained_model_path=/home/xxxx/works/COVID-19/PMP/pretrained_model_dataset1/```
 
 3. Cpoy datasets to your dataset path.
