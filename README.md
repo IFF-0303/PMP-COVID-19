@@ -36,8 +36,8 @@ config.pretrained_model_path=/home/xxxx/works/COVID-19/PMP/pretrained_model_data
 ```
 
   4. Cpoy datasets to your dataset path.
-
-
+   
+   
 **Training**.  
 
 For example, train our model on dataset 1
@@ -46,8 +46,8 @@ For example, train our model on dataset 1
 python train_on_dataset1.py
 ```
 It will save the models in ```./checkpionts/``` and results in ```./res/```.
-
-
+   
+   
 **Testing**.  
 
 For example, directly evaluate the model trained from dataset1 on dataset 2.
@@ -56,8 +56,8 @@ For example, directly evaluate the model trained from dataset1 on dataset 2.
 python test_on_dataset2_baseline.py
 ```
 It will save the results in ```./res/```.
-
-
+   
+   
 **Domain adaptation**.  
 
 For example, adapt the pre-trained model from dataset 1 on dataset 3 by a metric-learning method.
