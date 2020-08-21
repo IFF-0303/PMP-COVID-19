@@ -150,7 +150,7 @@ def train(model, train_data, val_data, config, num_fold):
     return model, ret_dict
 
 if __name__ == "__main__":
-    seed_torch(seed=6666)
+    seed_torch(seed=7777)
     remove_items = ['医务人员接触感染', '心梗', '脑梗', '心脑血管病',
     '慢性消化系统疾病','外周血管病', '慢性呼吸道疾病', 
     '自身免疫或结缔组织病', '服用糖皮质激素强的松15mgd×30天以上', 
