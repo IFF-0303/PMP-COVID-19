@@ -18,7 +18,7 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 ### How to Run
 
 **Preparation**.
-  1. Download datasets
+  1. Download datasets and pre-trained models:
 
      **Google Driver:** https://drive.google.com/    
      **Baiduyunpan:** https://pan.baidu.com    
