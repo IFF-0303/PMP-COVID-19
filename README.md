@@ -20,7 +20,7 @@ This repository contains the code of the paper [Predicting COVID-19 malignant pr
 **Preparation**.
   1. Download datasets and pre-trained models:
 
-     **Google Driver:** https://drive.google.com/    
+     **Google Driver:** https://drive.google.com/drive/folders/1oKaoni5Jojs4kuo9R36_vuxTV2TIUWFg?usp=sharing    
      **Baiduyunpan:** https://pan.baidu.com/s/17JoFkZQ3BQTBvH57BiIL0g  **Password:** t4ay     
   
   2. Modify the dataset path:
