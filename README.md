@@ -1,4 +1,5 @@
-# Predicting COVID-19 malignant progression with AI techniques
+# Deep learning for predicting COVID-19 malignant progression      
+
 By [Cong Fang], [Song Bai].
 
 ### Introduction
