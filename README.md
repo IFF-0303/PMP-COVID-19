@@ -18,23 +18,25 @@ This repository contains the code of the paper [Deep learning for predicting COV
 ### How to Run
 
 **Preparation**.
-  1. Download datasets and pre-trained models:
+  1. Download pre-trained models:
 
      **Google Driver:** https://drive.google.com/drive/folders/1oKaoni5Jojs4kuo9R36_vuxTV2TIUWFg?usp=sharing    
-     **Baiduyunpan:** https://pan.baidu.com/s/17JoFkZQ3BQTBvH57BiIL0g  **Password:** t4ay     
+     **Baiduyunpan:** https://pan.baidu.com/s/17JoFkZQ3BQTBvH57BiIL0g  **Password:** t4ay
+     
+  2. Datasets can be provided upon reasonable request to the corresponding author.      
   
-  2. Modify the dataset path:
+  3. Modify the dataset path:
 
 ```Shell
 config.data_root='/home/xxxx/works/COVID-19/PMP/data/
 ```
-  3. Modify the pre-trained model path:
+  4. Modify the pre-trained model path:
 
 ```Shell
 config.pretrained_model_path=/home/xxxx/works/COVID-19/PMP/pretrained_model_dataset1/
 ```
 
-  4. Cpoy datasets to your dataset path.
+  5. Cpoy datasets to your dataset path.
    
    
 **Training**.  
