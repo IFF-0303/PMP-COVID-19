@@ -151,17 +151,11 @@ def train(model, train_data, val_data, config, num_fold):
 
 if __name__ == "__main__":
     seed_torch(seed=7777)
-    remove_items = ['医务人员接触感染', '心梗', '脑梗', '心脑血管病',
-    '慢性消化系统疾病','外周血管病', '慢性呼吸道疾病', 
-    '自身免疫或结缔组织病', '服用糖皮质激素强的松15mgd×30天以上', 
-    '发病第几天出现气喘','咯血','ThTs','淋巴细胞CD45CD45abs', 
-    '咳嗽','HCRP', 'PCT','肌钙蛋白','BNP'
-    ]
-
+    remove_items = []
     config = edict()
     # path setting
-    config.data_root = '/home/cfang/works/COVID-19/PMP/data/'
-    config.pretrained_model_path = '/home/cfang/works/COVID-19/PMP/code/checkpoints/pretrained_model_data1'
+    config.data_root = ''
+    config.pretrained_model_path = ''
     
     # training setting
     config.lr = 0.05 # 1e-3
