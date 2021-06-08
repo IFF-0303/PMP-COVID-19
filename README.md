@@ -4,6 +4,9 @@
 ### Introduction
 This repository contains the code of the paper [Deep learning for predicting COVID-19 malignant progression](https://www.sciencedirect.com/science/article/pii/S1361841521001420?via%3Dihub). It develops an early-warning system with deep learning techniques to predict COVID-19 malignant progression. Our method leverages clinical data and CT scans of outpatients and achieves an AUC of 0.920 in the single-center study and an average AUC of 0.874 in the multicenter study.
 
+<p align="center"><img width="100%" src="figures/Figure 1.pdf" /></p>
+<p align="center"><img width="100%" src="figures/Figure 3.pdf" /></p>
+
 ### Prerequisites
 * python 3.7
 * pytorch 1.4
