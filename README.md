@@ -73,7 +73,7 @@ If you encounter any problems or have any inquiries, please contact cfang.meta@g
 **Citation**
 
 If you use this code or use our pre-trained weights for your research, please cite our paper:
-
+```
 @article{Fang2021DeepLF,
   title={Deep learning for predicting COVID-19 malignant progression},
   author={Cong Fang and S. Bai and Qianlan Chen and Yu Zhou and Liming Xia and Lixin Qin and Shi Gong and Xudong Xie and Chunhua Zhou and Dandan Tu and Changzheng Zhang and Xiaowu Liu and Weiwei Chen and Xiang Bai and Philip H. S. Torr},
@@ -82,3 +82,4 @@ If you use this code or use our pre-trained weights for your research, please ci
   volume={72},
   pages={102096 - 102096}
 }
+```
